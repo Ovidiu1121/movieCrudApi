@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1e336fb6-0a3e-4b3e-afa3-b86073025a76": {
+      "ProjectGuid": "1e336fb6-0a3e-4b3e-afa3-b86073025a76",
+      "DisplayName": "MovieCrudApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

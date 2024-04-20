@@ -1,0 +1,10 @@
+﻿insert into movie (id, title, duration, genre) values (1, 'Street Scene', 1, 'Drama');
+insert into movie (id, title, duration, genre) values (2, 'Killer Holiday', 2, 'Horror|Thriller');
+insert into movie (id, title, duration, genre) values (3, 'All the Fine Young Cannibals', 1, 'Drama|Romance');
+insert into movie (id, title, duration, genre) values (4, 'Now You See Him, Now You Don''t', 3, 'Comedy|Sci-Fi');
+insert into movie (id, title, duration, genre) values (5, 'Son of No One, The', 1, 'Action|Crime|Thriller');
+insert into movie (id, title, duration, genre) values (6, 'Our Daily Bread (Unser täglich Brot)', 2, 'Documentary');
+insert into movie (id, title, duration, genre) values (7, 'Off Beat', 2, 'Comedy|Romance');
+insert into movie (id, title, duration, genre) values (8, 'Equinox Flower (Higanbana)', 1, 'Comedy|Drama');
+insert into movie (id, title, duration, genre) values (9, 'Blood Runs Cold', 1, 'Horror');
+insert into movie (id, title, duration, genre) values (10, 'Général Idi Amin Dada: A Self Portrait (Général Idi Amin Dada: Autoportrait)', 2, 'Documentary|War');

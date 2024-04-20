@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "9c0bc9ad-b415-427d-93f6-e16800ab3928",
+		"name": "movie_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33660681"
+	},
+	"item": [
+		{
+			"name": "GetAllMovies",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
