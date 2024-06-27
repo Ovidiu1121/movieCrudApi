@@ -1,4 +1,5 @@
-﻿using MovieCrudApi.Movies.Model;
+﻿using MovieCrudApi.Dto;
+using MovieCrudApi.Movies.Model;
 using MovieCrudApi.Movies.Repository;
 using MovieCrudApi.Movies.Repository.interfaces;
 using MovieCrudApi.Movies.Service.interfaces;
@@ -12,16 +13,16 @@ namespace MovieCrudApi.Movies.Service
 
         private IMovieRepository _repository;
 
-        public MovieQueryService(MovieRepository repository)
+        public MovieQueryService(IMovieRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Movie>> GetAll()
+        public async Task<ListMovieDto> GetAll()
         {
-            IEnumerable<Movie> movies = await _repository.GetAllAsync();
+            ListMovieDto movies = await _repository.GetAllAsync();
 
-            if (movies.Count().Equals(0))
+            if (movies.movieList.Count().Equals(0))
             {
                 throw new ItemDoesNotExist(Constants.NO_MOVIES_EXIST);
             }
@@ -29,9 +30,9 @@ namespace MovieCrudApi.Movies.Service
             return movies;
         }
 
-        public async Task<Movie> GetById(int id)
+        public async Task<MovieDto> GetById(int id)
         {
-            Movie movies = await _repository.GetByIdAsync(id);
+            MovieDto movies = await _repository.GetByIdAsync(id);
 
             if (movies == null)
             {
@@ -41,9 +42,9 @@ namespace MovieCrudApi.Movies.Service
             return movies;
         }
 
-        public async Task<Movie> GetByTitle(string title)
+        public async Task<MovieDto> GetByTitle(string title)
         {
-            Movie movies = await _repository.GetByTitleAsync(title);
+            MovieDto movies = await _repository.GetByTitleAsync(title);
 
             if (movies == null)
             {

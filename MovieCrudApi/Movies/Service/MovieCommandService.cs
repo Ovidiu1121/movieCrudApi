@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+﻿
 using MovieCrudApi.Dto;
 using MovieCrudApi.Movies.Model;
 using MovieCrudApi.Movies.Repository;
@@ -13,14 +13,14 @@ namespace MovieCrudApi.Movies.Service
     {
         private IMovieRepository _repository;
 
-        public MovieCommandService(MovieRepository repository)
+        public MovieCommandService(IMovieRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<Movie> CreateMovie(CreateMovieRequest request)
+        public async Task<MovieDto> CreateMovie(CreateMovieRequest request)
         {
-            Movie movie = await _repository.GetByTitleAsync(request.Title);
+            MovieDto movie = await _repository.GetByTitleAsync(request.Title);
 
             if (movie!=null)    
             {
@@ -31,9 +31,9 @@ namespace MovieCrudApi.Movies.Service
             return movie;
         }
 
-        public async Task<Movie> DeleteMovie(int id)
+        public async Task<MovieDto> DeleteMovie(int id)
         {
-            Movie movie = await _repository.GetByIdAsync(id);
+            MovieDto movie = await _repository.GetByIdAsync(id);
 
             if (movie==null)
             {
@@ -44,9 +44,9 @@ namespace MovieCrudApi.Movies.Service
             return movie;
         }
 
-        public async Task<Movie> UpdateMovie(int id, UpdateMovieRequest request)
+        public async Task<MovieDto> UpdateMovie(int id, UpdateMovieRequest request)
         {
-            Movie movie = await _repository.GetByIdAsync(id);
+            MovieDto movie = await _repository.GetByIdAsync(id);
 
             if (movie==null)
             {

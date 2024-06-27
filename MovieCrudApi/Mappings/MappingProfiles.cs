@@ -12,6 +12,7 @@ namespace MovieCrudApi.Mappings
 
             CreateMap<CreateMovieRequest, Movie>();
             CreateMap<UpdateMovieRequest, Movie>();
+            CreateMap<MovieDto, Movie>().ReverseMap();
 
         }
 

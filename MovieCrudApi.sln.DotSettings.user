@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2f5fd9c7_002D769e_002D41ba_002Da0b4_002D61776b3e899d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from UnitTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFolder&gt;E10BC4D0-BB5A-44EC-B1FB-5804C29F739F/d:UnitTests&lt;/ProjectFolder&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Post_Create_ValidRequest_ReturnsCreatedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Post_Create_DoctorAlreadyExists_ReturnsBadRequestStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Put_Update_ValidRequest_ReturnsAcceptedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Put_Update_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Delete_Delete_DoctorExists_ReturnsDeletedDoctor&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Get_GetById_ValidRequest_ReturnsOKStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Get_GetById_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E10BC4D0-BB5A-44EC-B1FB-5804C29F739F::net6.0::tests.IntegrationTests.MovieIntegrationTests.Delete_Delete_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

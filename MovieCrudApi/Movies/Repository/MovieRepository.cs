@@ -19,7 +19,7 @@ namespace MovieCrudApi.Movies.Repository
             _mapper = mapper;
         }
 
-        public async Task<Movie> CreateMovie(CreateMovieRequest request)
+        public async Task<MovieDto> CreateMovie(CreateMovieRequest request)
         {
             var movie = _mapper.Map<Movie>(request);
 
@@ -27,10 +27,10 @@ namespace MovieCrudApi.Movies.Repository
 
             await _context.SaveChangesAsync();
 
-            return movie;
+            return _mapper.Map<MovieDto>(movie);
         }
 
-        public async Task<Movie> DeleteMovieById(int id)
+        public async Task<MovieDto> DeleteMovieById(int id)
         {
             var movie = await _context.Movies.FindAsync(id);
 
@@ -38,25 +38,36 @@ namespace MovieCrudApi.Movies.Repository
 
             await _context.SaveChangesAsync();
 
-            return movie;
+            return _mapper.Map<MovieDto>(movie);
         }
 
-        public async Task<IEnumerable<Movie>> GetAllAsync()
+        public async Task<ListMovieDto> GetAllAsync()
         {
-            return await _context.Movies.ToListAsync();
+            List<Movie> result = await _context.Movies.ToListAsync();
+            
+            ListMovieDto listDoctorDto = new ListMovieDto()
+            {
+                movieList = _mapper.Map<List<MovieDto>>(result)
+            };
+
+            return listDoctorDto;
         }
 
-        public async Task<Movie> GetByIdAsync(int id)
+        public async Task<MovieDto> GetByIdAsync(int id)
         {
-           return await _context.Movies.SingleOrDefaultAsync(x => x.Id.Equals(id));
+            var movie = await _context.Movies.Where(m => m.Id == id).FirstOrDefaultAsync();
+            
+            return _mapper.Map<MovieDto>(movie);
         }
 
-        public async Task<Movie> GetByTitleAsync(string title)
+        public async Task<MovieDto> GetByTitleAsync(string title)
         {
-            return await _context.Movies.SingleOrDefaultAsync(x => x.Title.Equals(title));
+            var movie = await _context.Movies.Where(m => m.Title.Equals(title)).FirstOrDefaultAsync();
+            
+            return _mapper.Map<MovieDto>(movie);
         }
 
-        public async Task<Movie> UpdateMovie(int id, UpdateMovieRequest request)
+        public async Task<MovieDto> UpdateMovie(int id, UpdateMovieRequest request)
         {
             var movie = await _context.Movies.FindAsync(id);
 
@@ -68,7 +79,7 @@ namespace MovieCrudApi.Movies.Repository
 
             await _context.SaveChangesAsync();
 
-            return movie;
+            return _mapper.Map<MovieDto>(movie);
         }
     }
 }

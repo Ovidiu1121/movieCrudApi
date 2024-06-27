@@ -19,13 +19,13 @@ namespace MovieCrudApi.Movies.Controllers
             _movieQueryService = movieQueryService;
         }
 
-        public override async Task<ActionResult<Movie>> CreateMovie([FromBody] CreateMovieRequest request)
+        public override async Task<ActionResult<MovieDto>> CreateMovie([FromBody] CreateMovieRequest request)
         {
             try
             {
                 var movie = await _movieCommandService.CreateMovie(request);
 
-                return Ok(movie);
+                return Created("Filmul a fost adaugat",movie);
             }
             catch (ItemAlreadyExists ex)
             {
@@ -33,7 +33,7 @@ namespace MovieCrudApi.Movies.Controllers
             }
         }
 
-        public override async Task<ActionResult<Movie>> DeleteMovie([FromRoute] int id)
+        public override async Task<ActionResult<MovieDto>> DeleteMovie([FromRoute] int id)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace MovieCrudApi.Movies.Controllers
             }
         }
 
-        public override async Task<ActionResult<IEnumerable<Movie>>> GetAll()
+        public override async Task<ActionResult<ListMovieDto>> GetAll()
         {
             try
             {
@@ -60,7 +60,7 @@ namespace MovieCrudApi.Movies.Controllers
             }
         }
 
-        public override async Task<ActionResult<Movie>> GetByIdRoute([FromRoute] int id)
+        public override async Task<ActionResult<MovieDto>> GetByIdRoute([FromRoute] int id)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace MovieCrudApi.Movies.Controllers
             }
         }
 
-        public override async Task<ActionResult<Movie>> UpdateMovie([FromRoute] int id, [FromBody] UpdateMovieRequest request)
+        public override async Task<ActionResult<MovieDto>> UpdateMovie([FromRoute] int id, [FromBody] UpdateMovieRequest request)
         {
             try
             {

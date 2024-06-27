@@ -5,11 +5,11 @@ namespace MovieCrudApi.Movies.Repository.interfaces
 {
     public interface IMovieRepository
     {
-        Task<IEnumerable<Movie>> GetAllAsync();
-        Task<Movie> GetByIdAsync(int id);
-        Task<Movie> GetByTitleAsync(string title);
-        Task<Movie> CreateMovie(CreateMovieRequest request);
-        Task<Movie> UpdateMovie(int id, UpdateMovieRequest request);
-        Task<Movie> DeleteMovieById(int id);
+        Task<ListMovieDto> GetAllAsync();
+        Task<MovieDto> GetByIdAsync(int id);
+        Task<MovieDto> GetByTitleAsync(string title);
+        Task<MovieDto> CreateMovie(CreateMovieRequest request);
+        Task<MovieDto> UpdateMovie(int id, UpdateMovieRequest request);
+        Task<MovieDto> DeleteMovieById(int id);
     }
 }
